@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+void insertionSort(int arra[], int n)
+//function for sorting the numbers
+{
+	int s, key, j;
+	for (s = 1; s < n; s++)
+	{
+		key = arra[s];
+		j = s - 1;
+
+		while (j >= 0 && arra[j] > key)
+		{
+			arra[j + 1] = arra[j];
+			j = j - 1;
+		}
+		arra[j + 1] = key;
+	}
+}
+
+void printArray(int arra[], int n)
+{
+	int i;
+	for (i = 0; i < n; i++)
+		cout << arra[i] << " \n"; //couts spaces and lines until the last number
+}
+
+int main()
+
+{
+	int arra[] = { 5, 4, 3, 8, 2, 9, 6, 7, 1, 10 }; //these are the number being arranged
+	int l = sizeof(arra) / sizeof(arra[0]);
+
+	insertionSort(arra, l);
+	printArray(arra, l);
+
+	return 0;
+}
